@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<record id="dev_form_view" model="ir.ui.view">
+            <field name="name">dev.person.form</field>
+            <field name="model">dev.person</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Print Options">
+            <separator string="Print Options" colspan="2"/>
+            <newline/>
+            <field name="name"/>
+            <field name="person_properties"/>
+            <field name="product_id"/>
+            <field name="person_comments"/>
+            <field name="person_datetime"/>
+
+
+            </form>
+
+        </field>
+        </record>
+
+
+
+
+<record model="ir.actions.act_window" id="action_dev_person_form">
+<field name="name">dev_person</field>
+<field name="res_model">dev.person</field>
+</record>
+
+<record model="ir.actions.act_window" id="action_dev_property_form">
+<field name="name">dev_propery</field>
+<field name="res_model">dev.property</field>
+</record>
+
+
+
+<menuitem name="Dev" icon="terp-project" id="dev_menu" />
+<menuitem name="Person" parent="dev_menu" id="dev_menu_person" action="action_dev_person_form" />
+<menuitem name="Property" parent="dev_menu" id="dev_menu_property" action="action_dev_property_form" />
+    <menuitem
+            name="Person Media"
+            action="action_dev_person_form"
+            id="dev_menu_person_sub"
+            groups="base.group_no_one"
+            parent="dev_menu_person"/>
+
+</data>
+</openerp>
+
