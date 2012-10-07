@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<record id="statement_form_view" model="ir.ui.view">
+            <field name="name">statement.value.form</field>
+            <field name="model">statement.value</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Print Options">
+            <separator string="Print Options" colspan="2"/>
+            <newline/>
+            <field name="name" />
+            <field name="statement_properties"/>
+            <field name="product_id"/>
+            <field name="statement_comments"/>
+            <field name="statement_datetime" eval="str(ref('fields.datetime.now'))"/>
+
+
+            </form>
+
+        </field>
+        </record>
+
+
+
+
+<record model="ir.actions.act_window" id="action_statement_value_form">
+<field name="name">statement_value</field>
+<field name="res_model">statement.value</field>
+</record>
+
+<record model="ir.actions.act_window" id="action_statement_property_form">
+<field name="name">statement_propery</field>
+<field name="res_model">statement.property</field>
+</record>
+
+
+
+<menuitem name="Statements" icon="terp-project" id="statements_menu" />
+<menuitem name="Statement" parent="statements_menu" id="statement_menu_value" action="action_statement_value_form" />
+<menuitem name="Property" parent="statements_menu" id="statement_menu_property" action="action_statement_property_form" />
+    <menuitem
+            name="Person Media"
+            action="action_statement_value_form"
+            id="statement_menu_value_sub"
+            groups="base.group_no_one"
+            parent="statement_menu_value"/>
+
+</data>
+</openerp>
+

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    "name" : "Dev module",
+    "name" : "Statements module",
     "version" : "0.1",
     "author" : "Dev",
     'complexity': "easy",
@@ -9,11 +9,11 @@
     """,
     "website" : "http://www.openerp.com",
     "depends" : ['product'],
-    "category" : "Dev",
+    "category" : "Statements",
     "sequence": 16,
     "init_xml" : [],
     "demo_xml" : [],
-    "update_xml" : ["dev_view.xml",],
+    "update_xml" : ["statements_view.xml",],
     'test': [],
     'installable': True,
     'application': True,
